@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raghuveer Bhati | Full Portfolio</title>
+    <style>
+        :root {
+            --primary-bg: #0a0f1e;
+            --glass: rgba(255, 255, 255, 0.08);
+            --accent: #00d2ff;
+            --magic-red: #ff4d4d;
+            --text-main: #e2e8f0;
+            --text-dim: #94a3b8;
+            --tech-tag: rgba(0, 210, 255, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-bg);
+            background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #0a0f1e 100%);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container { width: 100%; max-width: 600px; }
+        .header { text-align: center; margin-bottom: 30px; }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+            object-position: 50% 15%; 
+            margin-bottom: 15px;
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.3);
+        }
+
+        /* Magic Social Buttons */
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .magic-btn {
+            position: relative;
+            background: #161e2d;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .magic-btn:hover::before, .magic-btn:active::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, var(--accent));
+            animation: rotate 4s linear infinite;
+        }
+
+        .magic-btn::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: #161e2d;
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        .btn-text { position: relative; z-index: 2; font-size: 0.9rem; }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+
+        /* Project Cards */
+        h2 { font-size: 1.3rem; border-left: 4px solid var(--accent); padding-left: 12px; margin-top: 30px; margin-bottom: 20px; }
+        
+        .project-card {
+            background: var(--glass);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+        }
+
+        .project-card h3 { margin: 0 0 8px 0; color: #fff; font-size: 1.1rem; }
+        .project-card p { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.4; }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tech-tag {
+            background: var(--tech-tag);
+            color: var(--accent);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+        }
+
+        /* View Project Button with Red Magic Line */
+        .btn-view-magic {
+            position: relative;
+            display: inline-block;
+            background: #111;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #fff !important;
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            overflow: hidden;
+            border: 1px solid rgba(255, 77, 77, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn-view-magic:hover::before, .btn-view-magic:active::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, var(--magic-red));
+            animation: rotate 3s linear infinite;
+        }
+
+        .btn-view-magic::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: #111;
+            border-radius: 6px;
+            z-index: 1;
+        }
+
+        .btn-view-magic span { position: relative; z-index: 2; }
+
+        .exp-box {
+            background: rgba(0, 210, 255, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer { text-align: center; margin-top: 50px; color: var(--text-dim); font-size: 0.75rem; padding-bottom: 30px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <img src="https://raw.githubusercontent.com/RAGHUVEER033/photo/3de250760f9bce83b7284b392d177fd821e254e5/IMG_20251021_192225_196~2.jpg" alt="Raghuveer Bhati" class="profile-img">
+            <h1>Raghuveer Bhati</h1>
+            <p>Full Stack Web Developer | Blockchain Tester</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://github.com/raghublock" class="magic-btn" target="_blank"><span class="btn-text">GitHub</span></a>
+            <a href="https://in.linkedin.com/in/raghuveer-bhati-94a37aa9" class="magic-btn" target="_blank"><span class="btn-text">LinkedIn</span></a>
+            <a href="https://x.com/ragu_012" class="magic-btn" target="_blank"><span class="btn-text">X (Twitter)</span></a>
+            <a href="https://t.me/raghubhati" class="magic-btn" target="_blank"><span class="btn-text">Telegram</span></a>
+        </div>
+
+        <h2>Management Systems</h2>
+
+        <div class="project-card">
+            <h3>Laxmi Library Fee System</h3>
+            <p>Advanced system for managing library fees, student attendance, and sending automated notifications.</p>
+            <div class="tech-stack">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TailwindCSS</span>
+                <span class="tech-tag">Cloudflare</span>
+            </div>
+            <a href="https://raghublock.github.io/library-fee/" class="btn-view-magic" target="_blank"><span>View Project</span></a>
+        </div>
+        
+        <div class="project-card">
+            <h3>Student Fees Management</h3>
+            <p>Secure web dashboard for tracking student payment records and monthly transaction history.</p>
+            <div class="tech-stack">
+                <span class="tech-tag">HTML / JS</span>
+                <span class="tech-tag">Cloudflare Workers</span>
+            </div>
+            <a href="https://student-fees-management.pages.dev/" class="btn-view-magic" target="_blank"><span>View Project</span></a>
+        </div>
+
+        <div class="project-card">
+            <h3>Veggie Shop</h3>
+            <p>Modern e-commerce platform built for local vegetable delivery with a dynamic cart.</p>
+            <div class="tech-stack">
+                <span class="tech-tag">HTML / CSS</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Render</span>
+            </div>
+            <a href="https://veggie-shop-lgvy.onrender.com/" class="btn-view-magic" target="_blank"><span>View Project</span></a>
+        </div>
+
+        <h2>AI & Media Tools</h2>
+
+        <div class="project-card">
+            <h3>AI PDF Editor</h3>
+            <p>Smart document editor featuring OCR and AI-driven modifications.</p>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Streamlit</span>
+            </div>
+            <a href="https://aipdfedit.streamlit.app/#preview" class="btn-view-magic" target="_blank"><span>View Project</span></a>
+        </div>
+
+        <div class="project-card">
+            <h3>Free BG Remover</h3>
+            <p>Instant background removal tool for professional image processing and clean cutouts.</p>
+            <div class="tech-stack">
+                <span class="tech-tag">HTML / JS</span>
+                <span class="tech-tag">Python API (Rembg)</span>
+            </div>
+            <a href="https://raghublock.github.io/free-bg-remover/" class="btn-view-magic" target="_blank"><span>View Project</span></a>
+        </div>
+
+        <div class="project-card">
+            <h3>Image Master Tool</h3>
+            <p>Client-side browser editor for quick image filtering, cropping, and visual enhancements.</p>
+            <div class="tech-stack">
+                <span class="tech-tag">HTML / CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Canvas API</span>
+            </div>
+            <a href="https://raghublock.github.io/image-master-tool/" class="btn-view-magic" target="_blank"><span>View Project</span></a>
+        </div>
+
+        <div class="project-card">
+            <h3>PDF Compressor</h3>
+            <p>Fast tool to reduce PDF size locally without losing essential document clarity.</p>
+            <div class="tech-stack">
+                <span class="tech-tag">HTML / CSS</span>
+                <span class="tech-tag">JavaScript</span>
+            </div>
+            <a href="https://raghublock.github.io/PDF_Compress/" class="btn-view-magic" target="_blank"><span>View Project</span></a>
+        </div>
+
+        <h2>Educational & Others</h2>
+
+        <div class="project-card">
+            <h3>Hindi Typing Master</h3>
+            <p>Interactive platform for mastering Hindi typing with real-time speed and error tracking.</p>
+            <div class="tech-stack">
+                <span class="tech-tag">HTML / CSS</span>
+                <span class="tech-tag">JavaScript</span>
+            </div>
+            <a href="https://raghublock.github.io/hindi-typing-master/" class="btn-view-magic" target="_blank"><span>View Project</span></a>
+        </div>
+
+        <div class="project-card">
+            <h3>Typing Master Pro</h3>
+            <p>English typing practice suite with advanced lessons to boost professional typing speed.</p>
+            <div class="tech-stack">
+                <span class="tech-tag">HTML / CSS</span>
+                <span class="tech-tag">JavaScript</span>
+            </div>
+            <a href="https://raghublock.github.io/typing-master-pro/" class="btn-view-magic" target="_blank"><span>View Project</span></a>
+        </div>
+
+        <div class="project-card">
+            <h3>NoteList App</h3>
+            <p>Secure note-taking PWA with persistent local storage functionality and offline support.</p>
+            <div class="tech-stack">
+                <span class="tech-tag">HTML / CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Firesbase</span>
+            </div>
+            <a href="https://raghublock.github.io/notelist/" class="btn-view-magic" target="_blank"><span>View Project</span></a>
+        </div>
+
+        <h2>Experience</h2>
+        <div class="exp-box">
+            <div style="font-weight: bold; color: var(--accent);">Blockchain Tester & Web Developer</div>
+            <div style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 8px;">Oct 2019 - Present</div>
+            <p style="font-size: 0.85rem; margin: 0; line-height: 1.5;">Experienced in testing Aptos, Arbitrum, Sui, and Linea testnets. Focused on building high-performance web tools and management systems for Bikaner locals.</p>
+        </div>
+
+        <footer>
+            Built by Raghuveer Bhati &copy; 2026
+        </footer>
+    </div>
+
+</body>
+</html>
+
+                          
