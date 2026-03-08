@@ -3,6 +3,9 @@
 // src/config.js
 
 const config = {
+   // 🔗 Backend API Link (Sabse Zaroori)
+  apiUrl: "https://library-api.raghuveerbhati525.workers.dev",
+
   // Business Details
   appName: "Laxmi Library",       // Gym ke liye: "FitLife Gym"
   branchName: "Bikaner Branch",   // Gym ke liye: "JNV Colony Branch"
@@ -26,6 +29,9 @@ export default config;
 // src/config.js
 
 const config = {
+
+   // 🔗 Backend API Link (Sabse Zaroori)
+  apiUrl: "https://gym-api.raghuveerbhati525.workers.dev",
   // Business Details
   appName: "Body GYM",       // Gym ke liye: "FitLife Gym"
   branchName: "Bikaner Branch",   // Gym ke liye: "JNV Colony Branch"
